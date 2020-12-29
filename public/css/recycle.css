@@ -1,0 +1,54 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+#header{background-image: url(../img/munu_bg.svg);background-size: cover;background-position: 50% 50%;background-repeat: no-repeat;color: #fff;}
+
+.q_total{width:50%; background:#ffffff; position:relative;margin: 0 auto;padding-top: 80px;}
+.q_frame{width: 100%;height:40vh;margin-top: 100px;}
+
+.q_cont{width:500px; height:auto; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); background:#fff; border-radius:8px; padding:20px; box-shadow:0 0 3px rgba(0,0,0,0.5);}
+
+.q_cont > div{padding:20px 0; border-bottom:1px solid #edefed;}
+.q_cont > div:last-child{border:none; padding-bottom:0;}
+.q_cont .q_answer label{cursor: pointer;}
+/* .q_cont .q_answer{content: "";display: block;clear: both;}
+.q_cont .q_answer input:first-child{float: left;}
+.q_cont .q_answer input:last-child{float: right;} */
+
+.q_question h2{font-size:18px; padding-bottom:20px;}
+.q_button button{width:120px; height:36px; border-radius:6px; border:none; color:#fff; }
+.q_button button.prev{background:#888; float:left;cursor: pointer;}
+.q_button button.next{background:#9d60ff; float:right;cursor: pointer;}
+
+.txt_alert{color:#ff0000; font-size:13px; display:none;}
+
+.q_result{text-align:center;margin: 80px 0;}
+.q_result h2{font-size: 20px;}
+.q_result .resultImg{width:150px;margin: 10px 0;}
+.q_result .result_tit{font-size: 20px;}
+.q_result .result_mbti{margin: 10px 0;}
+.q_result .result_txt{}
+.q_result .lastclear{padding: 10px 0;}
+.q_result .classLink{display:inline-block; padding:6px 10px; background:#9d60ff; color:#fff; border-radius:6px; margin-top:10px; line-height:20px;}
+
+.q_cont02, .q_cont03,.q_cont04,.q_result{display: none;}
+footer.sticky{position: fixed; bottom:0; left:0; width: 100%;}
+
+@media(max-width: 1199px){
+    .q_total{padding-top: 120px;}
+    .q_cont{width: 500px;}
+    .q_question h2{font-size:16px;}
+}
+@media(max-width: 991px){
+    .q_total{padding-top: 100px;}
+    .q_cont{width: 500px;padding: 15px;}
+    .q_question h2{font-size:15px;padding-bottom:15px;}
+    .q_button button{width:100px;height:30px;}
+    
+}
+@media(max-width: 767px){
+    .q_total{padding-top: 80px;}
+    .q_cont{ width: 350px;padding:10px;}
+    .q_question h2{font-size:14px;padding-bottom:10px;}
+    .q_button button{width:80px;height:25px;}
+}

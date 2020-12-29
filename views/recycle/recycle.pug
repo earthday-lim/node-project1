@@ -1,0 +1,111 @@
+extends ../layout/default.pug
+block content
+  body
+    section
+      .q_total
+        .q_frame
+          .q_cont.q_cont01
+            .q_question
+              h2 1. &#xD3C9;&#xC18C;&#xC5D0; &#xC131;&#xACA9;&#xC774; &#xC758;&#xC695;&#xC801;&#xC774;&#xACE0; &#xD65C;&#xB3D9;&#xC801;&#xC785;&#xB2C8;&#xAE4C;?
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .q_answer
+              label(for='active')
+                input#active(type='radio', name='activity', value='activity')
+                | &#xC758;&#xC695;&#xC801;&#xC774;&#xACE0; &#xD65C;&#xB3D9;&#xC801;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              label(for='quiet')
+                input#quiet(type='radio', name='activity', value='quiet')
+                | &#xCC28;&#xBD84;&#xD558;&#xACE0; &#xB0B4;&#xC131;&#xC801;
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .q_button
+              button.prev(type='button') &#xC774;&#xC804;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.next(type='button') &#xB2E4;&#xC74C;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              .clear
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              p.txt_alert.alert_01 &#xC704;&#xC758; &#xD56D;&#xBAA9;(&#xB4E4;)&#xC744; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.
+          | &#x9;&#x9;&#x9;&#x9;&#x9;
+          .q_cont.q_cont02
+            .q_question
+              h2 2. &#xC5B4;&#xB5A0;&#xD55C; &#xC77C;&#xC744; &#xD560; &#xB54C; &#xD63C;&#xC790; &#xC0AC;&#xC0C9; &#xD558;&#xB294; &#xAC83;&#xC744; &#xC120;&#xD638;&#xD569;&#xB2C8;&#xAE4C;?
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .q_answer
+              label(for='alone')
+                input#alone(type='radio', name='thinking', value='alone')
+                | &#xC790;&#xC8FC;&#xD558;&#xB294; &#xD3B8;&#xC774;&#xB2E4;.
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              label(for='together')
+                input#together(type='radio', name='thinking', value='together')
+                | &#xC804;&#xD600; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;.
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .q_button
+              button.prev(type='button') &#xC774;&#xC804;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.next(type='button') &#xB2E4;&#xC74C;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              .clear
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              p.txt_alert.alert_02 &#xC704;&#xC758; &#xD56D;&#xBAA9;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.
+          | &#x9;&#x9;&#x9;&#x9;&#x9;
+          .q_cont.q_cont03
+            .q_question
+              h2 3. &#xB2F9;&#xC2E0;&#xC740; &#xCC3D;&#xC758;&#xC801;&#xC774;&#xAE30;&#xBCF4;&#xB2E4; &#xD604;&#xC2E4;&#xC801;&#xC774;&#xB77C;&#xACE0; &#xC0DD;&#xAC01;&#xD569;&#xB2C8;&#xAE4C;?
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .q_answer
+              label(for='creative')
+                input#creative(type='radio', name='character', value='creative')
+                |  &#xCC3D;&#xC758;&#xC801;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              label(for='reality')
+                input#reality(type='radio', name='character', value='reality')
+                |  &#xD604;&#xC2E4;&#xC801;
+            | &#x9;&#x9;&#x9;&#x9;&#x9;
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .q_button
+              button.prev(type='button') &#xC774;&#xC804;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.next(type='button') &#xB2E4;&#xC74C;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              .clear
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              p.txt_alert.alert_03 &#xC704;&#xC758; &#xD56D;&#xBAA9;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.
+          | &#x9;&#x9;&#x9;&#x9;&#x9;
+          .q_cont.q_cont04
+            .q_question
+              h2 4. &#xCDE8;&#xBBF8;&#xB97C; &#xC911;&#xC694;&#xD558;&#xAC8C; &#xC0DD;&#xAC01;&#xD569;&#xB2C8;&#xAE4C;?
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .q_answer
+              label(for='long')
+                input#long(type='radio', name='money', value='long')
+                | &#xCDE8;&#xBBF8;&#xB294; &#xC0B6;&#xC758; &#xC77C;&#xBD80;&#xC774;&#xB2E4;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              label(for='short')
+                input#short(type='radio', name='money', value='short')
+                | &#xCDE8;&#xBBF8;&#xB294; &#xC2DC;&#xAC04;&#xC744; &#xB54C;&#xC6B0;&#xB294; &#xC218;&#xB2E8;&#xC774;&#xB2E4;
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .q_button
+              button.prev(type='button') &#xC774;&#xC804;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.next(type='button') &#xB2E4;&#xC74C;
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              .clear
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              p.txt_alert.alert_04 &#xC704;&#xC758; &#xD56D;&#xBAA9;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.
+          | &#x9;&#x9;&#x9;&#x9;&#x9;
+          .q_cont.q_result
+            h2 MBTI &#xC720;&#xD615;&#xC5D0; &#xB530;&#xB978; &#xCD94;&#xCC9C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC548;&#xB0B4;&#xD569;&#xB2C8;&#xB2E4;.
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            img.resultImg(src='')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            h3.result_tit
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            h4.result_mbti
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            p.result_txt
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            .clear.lastclear
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            a.classLink(href='') &#xCD94;&#xCC9C; &#xD074;&#xB798;&#xC2A4; &#xBC14;&#xB85C;&#xAC00;&#xAE30;
+        // /.q_frame
+      // /.q_total

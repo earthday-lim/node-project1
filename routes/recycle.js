@@ -6,17 +6,17 @@ const router = express.Router();
 const { sqlGen } = require('../modules/mysql-conn');
 const pager = require('../modules/pager-conn');
 
-router.get(['/', '/gallery', '/gallery/:page'], async (req, res, next) => {
+router.get(['/', '/recycle', '/recycle/:page'], async (req, res, next) => {
 	let page = req.params.page || 1;
 	let connect, rs, pug;
 	try {
-		rs = await sqlGen('gallery', 'S', {field: ['count(id)']});
+		rs = await sqlGen('recycle', 'S', {field: ['count(id)']});
 		let pagers = pager(page, rs[0][0]['count(id)'], {pagerCnt: 3, listCnt: 7});
 		pug = {
-			title: '게시판 home', js: 'gallery', css: 'gallery', 
+			title: '게시판 home', js: 'recycle', css: 'recycle', 
 			...pagers
 		};
-		rs = await sqlGen('gallery', 'S', { 
+		rs = await sqlGen('recycle', 'S', { 
 			order: ['id', 'DESC'], 
 			limit: [pagers.startIdx, pagers.listCnt]
 		});
@@ -24,7 +24,7 @@ router.get(['/', '/gallery', '/gallery/:page'], async (req, res, next) => {
 		pug.lists.forEach((v) => {
 			v.wdate = moment(v.wdate).format('YYYY년 MM월 DD일');
 		});
-		res.render('./gallery/gallery.pug', pug);
+		res.render('./recycle/recycle.pug', pug);
 	}
 	catch(e) {
 		next(createError(500, e.sqlMessage || e));
