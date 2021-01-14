@@ -1,30 +1,4 @@
 @charset "utf-8";
-
-/* tag reset */
-body, h1, h2, h3, h4, p, ul, button{margin: 0;padding: 0;}
-h1, h2, h3, h4{font-size: inherit;font-weight: 500;line-height: 1.2;}
-ul{list-style: none;}
-a:link, a:visited, a:hover, a:active{text-decoration: none;color: inherit;}
-button{border: 0;background: none;font-family: inherit;font-size: inherit;color: inherit;cursor: pointer;}
-img{border: 0;vertical-align: top;}
-section, article, footer{display: block;}
-
-/* common class */
-.f_l{float: left;}
-.f_r{float: right;}
-.clearfix:after{content: '';display: block;clear: both;}
-.p_r{position: relative;}
-.p_a{position: absolute;}
-.blind{width: 1px;height: 1px;border: 0;overflow: hidden;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
-.blind2{width: 1px;height: 1px;border: 0;margin: -1px;display: inline-block;overflow: hidden;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
-.max_area{max-width: 1920px;margin: 0 auto;}/* 1920 이하로 작업 ex) min-width: 1200px; 1200px 이상으로 작업 */
-.area{width: 1170px;margin: 0 auto;}
-.bold{font-weight: 700;}
-.font_w{color: #ffffff !important;}/* footer 내부에서만 쓰이지 않으므로 #footer .font_w라고 쓰지 말고 우선순위를 최고로 높이기 위해 !important를 넣어준다 단, 세미콜론 앞에 작성 */
-.center{text-align: center;}
-
-body{background: #aaa;}
-
 /* section */
 #indicator{position: fixed;top: 150px;right: 0;}
 
@@ -33,102 +7,65 @@ body{background: #aaa;}
 #indicator{position: fixed;top: 50%;right: 73px;margin-top: -74px;width: 138px;z-index: 900;font-size: 12px;}
 #indicator ul li{padding: 8px 0;}
 #indicator ul li a{display: block;height: 24px;line-height: 24px;}
-    #indicator ul li a span, #indicator ul li a::after{float: left;height: 24px;}
-    #indicator ul li a span{display: block;width: 104px;background: #00265b;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px;text-align: center;color: #ffffff;margin-right: 10px;opacity: 0;}
-    #indicator ul li a:hover span, #indicator ul li.on a span{opacity: 1;}/* display: none으로 하면 스크린 리더에서도 안 읽고 float했던 :after가 앞으로 움직여지므로 공간은 차지하고 있게끔 투명도로 없애기 */
+#indicator ul li a span, #indicator ul li a::after{float: left;height: 24px;}
+#indicator ul li a span{display: block;width: 104px;background: #458d51;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px;text-align: center;color: #ffffff;margin-right: 10px;opacity: 0;}
+#indicator ul li a:hover span, #indicator ul li.on a span{opacity: 1;}/* display: none으로 하면 스크린 리더에서도 안 읽고 float했던 :after가 앞으로 움직여지므로 공간은 차지하고 있게끔 투명도로 없애기 */
 
-    #indicator ul li a::after{content: '';width: 24px;height: 24px;background-color: #458d51;border-radius: 50%;}/* db필요 없음 float줬기 때문 */
-    #indicator ul li a:hover::after, #indicator ul li.on a::after{background-color: #1a4616;}
+#indicator ul li a::after{content: '';width: 24px;height: 24px;background-color: #458d51;border-radius: 50%;}/* db필요 없음 float줬기 때문 */
+#indicator ul li a:hover::after, #indicator ul li.on a::after{background-color: #1a4616;}
 
 /* #cnt1 - Main Slider */
-#cnt1{position: relative;}
+#cnt1{height: 60vh;}
 /* slider */
-#cnt1 #mainSlider{position: relative;height: 70vh;}
-#visual{width: 400%;height: 100%;}
-#visual li{width: 25%;height: 100%;background: no-repeat center;color: #ffffff;text-align: center;line-height: 52px;float: left;}
-#visual .list1{background-color: #0000ee;}
-#visual .list2{background-image: url(/views/home/images/main/bg_visual2.png);}
-#visual .list3{background-image: url(/views/home/images/main/bg_visual3.png);}
-#visual .list4{background-image: url(/views/home/images/main/bg_visual4.png);}
-#visual li strong{display: block;font-size: 34px;padding-top: 192px;font-weight: 400;}
-#visual li p{font-size: 50px;font-weight: 600;}
+#main_slider{height: 100%;/* overflow-y: hidden; */
+padding: 0 200px;}
+#main_slider .s_title{width: 25%;margin-right: 10%;}
+#main_slider .s_title h4{margin-top: 100px;font-size: 36px;}
+#main_slider .s_title p{font-size: 18px;padding-top: 10px;}
+#main_slider .s_title .swiper-pagination{top: 50px;}
+#main_slider .s_title .swiper-pagination span{margin: 0 5px;width: 10px;height: 10px;}
+#main_slider .swiper-container{height: 100%;width: 65%;}
+#main_slider .swiper-slide{height: 100%;border-radius: 30px;}
+#main_slider .swiper-slide a{display: block;width: 100%;height: 100%;}
+#main_slider .swiper-slide a .img{display: block;width: 70%;height: 100%;background-size: cover;background-position: 50% 50%;float: left;border-radius: 30px;}
+#main_slider .swiper-slide a .txt{width: 30%;height: 50%;float: right;text-align: center;transform: translateY(50%);}
+#main_slider .swiper-slide.s_01 a .img{background-image: url(../img/img-01.jpg);}
+#main_slider .swiper-slide.s_02 a .img{background-image: url(../img/img-02.jpg);}
+#main_slider .swiper-slide.s_03 a .img{background-image: url(../img/img-03.jpg);}
+#main_slider .swiper-slide.s_04 a .img{background-image: url(../img/img-04.jpg);}
+#main_slider img{width: 100%;transform: translate(0, -10vw);}
+.swiper-button-prev, .swiper-button-next, .swiper-pagination{--swiper-theme-color: #458d51;}
 
-    /* 버튼 그룹 .bx-controls */
-    .bx-controls-direction a, .bx-controls-auto, .bx-pager{position: absolute;z-index: 100;}/* 동적생성된 얘네가 posa를 가지므로 이들의 부모인 mainSlider가 posr을 가짐 */
-    .bx-controls a{text-indent: -9999px;}
-    /* 1) 이전, 다음 버튼 .bx-controls-direction */
-    .bx-controls-direction a{top: 312px;width: 54px;height: 53px;}
-    .bx-prev{left: 20px;background: url(../images/main/btn_prev.png);}
-    .bx-next{right: 20px;background: url(../images/main/btn_next.png);}
 
-    .bx-controls-auto, .bx-pager{left: 50%;top: 550px;}
-    /* 2) 시작, 정지 버튼  */
-    .bx-controls-auto{margin-left: 36.5px;}
-    .bx-controls-auto a{display: block;width: 27px;height: 27px;background: url(../images/main/btn_pause_play.png);}
-    .bx-controls-auto a.active{display: none;}
-    .bx-controls-auto .bx-start{background-position: right top;} 
-    .bx-controls-auto .bx-stop{background-position: left top;}
-
-    /* 3) paging indicator .bx-pager */
-    .bx-pager{margin-left: -63.5px;width: 100px;padding-top: 6px;}
-    .bx-pager a{float: left;width: 15px;height: 15px;margin-right: 10px;border: 2px solid #ffffff;border-radius: 50%;box-sizing: border-box;}
-    /* .bx-pager > div가 내부에 자식으로 a태그 하나만을 가지기 때문에 div를 float시키는 대신 a를 float시켜도 결과는 동일, a를 float시키는 이유는 a에 크기를 주려면 display속성을 줘야 되는데 float시키면 자동으로 display:inline-block속성을 가지기 때문 */
-    .bx-pager a.active{background: #ffffff;}
-
-/* .info */
-.info{top: 45%;left: 50%;transform: translateX(-50%);color: #ffffff;text-align: center;z-index: 100;}/* button들끼리 같은 z-index를 주려면 창 사이즈를 줄였을 때 겹치지 않는지도 따져봐야 함 */
-.info li{float: left;}
-.info li + li{margin-left: 30px;}
-.info li a{display: block;width: 70px;height: 24px;padding-top: 76px;background: no-repeat;opacity: 0.6;}
-.info li a:hover, .info li a:focus{opacity: 1;}
-.info li:nth-child(1) a{background-image: url(../images/main/btn_visual_company.png);}
-.info li:nth-child(2) a{background-image: url(../images/main/btn_visual_product.png);}
-.info li:nth-child(3) a{background-image: url(../images/main/btn_visual_recruit.png);}
-
-#content #bar1{height: 21vh;background-color: rgb(255, 217, 0);text-align: center;}
-#content #bar1 .txt{}
-#content #bar1 .txt 
+#bar1{text-align: center;}
+#bar1 .txt h3{height: 40px;line-height: 40px;font-size: 32px;}
+#bar1 .txt p{font-size: 16px;}
+#bar1 ul.trash li{height: 20vh;border-radius: 30px;background: #fff;padding: 0;overflow: hidden;background-size: cover;}
+#bar1 ul.trash li.paper{background-image: url(../img/trashes/paper.png);}
+#bar1 ul.trash li.plastic{background-image: url(../img/trashes/plastic_1.jpeg);}
+#bar1 ul.trash li.can{background-image: url(../img/trashes/can.jpg);}
+#bar1 ul.trash li.bottle{background-image: url(../img/trashes/bottle2.jpg);}
+#bar1 ul.trash li.plastic_bag{background-image: url(../img/trashes/plastic_bag.jpg);}
+#bar1 ul.trash li.stiroform{background-image: url(../img/trashes/stiroform.jpg);}
+#bar1 ul.trash li a{display: block;height: 100%;position: relative;}
+#bar1 ul.trash li a div{position: absolute;bottom: 0;width: 100%;}
+#bar1 ul.trash li a div h4{font-size: 24px;}
+#bar1 ul.trash li a div p{font-size: 20px;color: #ffffff;}
+#bar1 ul.trash li.paper a div p{background: rgb(253, 93, 93);}
+#bar1 ul.trash li.plastic a div p{background: rgb(253, 93, 186);}
+#bar1 ul.trash li.can a div p{background: rgb(253, 210, 93);}
+#bar1 ul.trash li.bottle a div p{background: rgb(93, 253, 133);}
+#bar1 ul.trash li.plastic_bag a div p{background: rgb(93, 144, 253);}
+#bar1 ul.trash li.stiroform a div p{background: rgb(208, 93, 253);}
 
 
 /* #cnt2 ~ #cnt5 공통 스타일 */
-#content .area{padding-bottom: 200px;}/* #cnt2, #cnt3, #cnt4, #cnt5 or #content article + article */
+#cnt2.area, #cnt3.area{padding-bottom: 160px;margin-top: 100px;}
 #content .area .tit{text-align: center;font-size: 36px;color: #000000;}
 #content .area .tit + p{text-align: center;padding: 6px 0 50px;font-size: 18px;}
 
-/* #cnt2 - ABOUT US */
-#cnt2{padding: 0 40px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
-.about{padding-bottom: 100px;}
-.about li{float: left;width: 255px;height: 200px;background: no-repeat right top;}
-.about li + li{margin-left: 22px;}
-.about li:nth-child(1){background-image: url(../images/main/bg_aboutus1.png);}
-.about li:nth-child(2){background-image: url(../images/main/bg_aboutus2.png);}
-.about li:nth-child(3){background-image: url(../images/main/bg_aboutus3.png);}
-.about li:nth-child(4){background-image: url(../images/main/bg_aboutus4.png);}
-.about li h4{padding: 35px 0 12px;font-size: 20px;line-height: 1;}
-.about li p{height: 85px;line-height: 21px;padding: 0 60px 26px 0;word-break: keep-all;}
-/* 글이 길어질 경우 br태그없이 마지막에서 줄바꿈을 어떻게 할지
-word-break : keep-all / break-all(기본값); 
-keep-all (단어는 자르지 않는다)
-break-all (모든 낱개의 글자를 자른다) */
-    .bg_arrow{display: inline-block;padding-right: 30px;height: 20px;line-height: 20px;background: url(../images/common/btn_detail.png) no-repeat right bottom;}
-    .about .bg_arrow:hover, .about .bg_arrow:focus{background-position: right top;color: #000;}
-    .about .bg_arrow{color: #666666;font-weight: 500;}
-    .news .bg_arrow{background-position: right top;}
 
-.news{width: 534px;height: 140px;}
-.news h4{font-size: 20px;line-height: 1;padding-bottom: 24px;}
-.news ul li{height: 20px;line-height: 20px;padding: 5px 0;}
-.news ul li *{float: left;height: 20px;}
-    .news ul li span{text-align: center;width: 78px;font-size: 12px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;background: #00265b;color: #ffffff;margin-right: 10px;}
-    .news .gray{background: #a2a5a6;}
-    .news .wblue{background: #01b4e5;}
-    .news strong{width: 320px;font-weight: 400;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
-    /* css 말줄임표 만들기
-    1) inline-block or block 타입으로 만들기(크기인식)   2) 가로크기 고정  
-    3) 줄바꿈 억제 white-space: nowrap;  4) 넘쳐나는 내용 숨기기 overflow: hidden; 5) text-overflow: ellipsis; */
-    .news ul li a p{width: 116px;text-align: right;}
-
-/* #cnt3 - PRODUCTS */
+/* #cnt2 - PRODUCTS */
 .products > li{position: relative;float: left;width: 380px;height: 300px;padding: 40px 140px 0 40px;margin-right: 15px;margin-bottom: 15px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 1px solid #ccc;background: no-repeat 250px 30px;}
 .products > li:nth-child(3n){margin-right: 0;}
 .products .list1{background-image: url(../images/main/bg_product1.png);}
@@ -145,7 +82,7 @@ break-all (모든 낱개의 글자를 자른다) */
 4) button : 불투명도 0 (display: none;하면 안되는 이유 : focus를 가진 태그가 display: none 되면 focus가 문서의 가장 처음으로 튕겨나간다
 5) ul : display: block으로 나타남
 */
-.products > li.on{background-color: #01b4e5;color: #ffffff;}
+.products > li.on{background-color: #458d51;color: #ffffff;}
 .products .list1:hover{background-image: url(../images/main/bg_product1_hover.png);}
 .products .list2:hover{background-image: url(../images/main/bg_product2_hover.png);}
 .products .list3:hover{background-image: url(../images/main/bg_product3_hover.png);}
@@ -156,48 +93,69 @@ break-all (모든 낱개의 글자를 자른다) */
     .products p{line-height: 20px;word-break: keep-all;}
     .products > li.on button{opacity: 0;cursor: default;}
     .products > li ul{display: none;}
-    .products > li.on ul{display: block;width: 160px;position: absolute;top: 80px;left: 40px;padding-right: 40px;background: #01b4e5;}
+    .products > li.on ul{display: block;width: 160px;position: absolute;top: 80px;left: 40px;padding-right: 40px;background: #458d51;}
     .products button{position: absolute;bottom: 0;left: 0;width: 100%;height: 80px;background: #cccccc url(../images/main/btn_more.png) no-repeat right center;}
         .products li ul li a{display: block;height: 29px;line-height: 29px;background: url(../images/main/arr_more.png) no-repeat right center;border-bottom: 1px solid #fff;font-size: 16px;}
-        .products li ul li a:hover, .products li ul li a:focus{color: #00265b;font-weight: 500;}
+        .products li ul li a:hover, .products li ul li a:focus{color: #1a4616;font-weight: 500;}
     /* 예외) .list6 추가 제어 a */
     .products .list6 a{display: none;position: absolute;top: 0;left: 0;right: 0;bottom: 0;}
     .products .list6.on a{display: block;}
 
-/* #cnt4 - PR CENTER */
-#cnt4 > ul > li{float: left;width: 378px;height: 452px;border: 1px solid #ccc;margin-bottom: 20px;}
-#cnt4 > ul > li + li{margin-left: 15px;}
-#cnt4 > ul > li p{font-size: 20px;width: 378px;height: 72px;line-height: 72px;text-align: center;}
+ /* #bar2 */
+ #bar2{background: #1a4616;padding: 25px 0px 25px 200px;height: 300px;color: #ffffff;}
+ #bar2 .txt h4{font-size: 30px;margin-bottom: 10px;}
+ #bar2 .txt p{font-size: 18px;}
+ .frame{width: 1100px;height: 250px;}
+.frame .box{display: inline-block;width: 20%;height: 100%;position: relative;transition: transform 0.5s, box-shadow 0.5s;overflow: hidden;}
 
-#cnt4 > div > h4, #cnt4 > div > p{float: left;}
-#cnt4 > div > ul{float: right;}
-#cnt4 > div > p{margin-top: 14px;margin-left: 5px;}
-#cnt4 > div > ul li{position: relative;float: left;margin-left: 8px;}
-    #cnt4 > div > ul li .tooltip{display: none;position: absolute;top: -50px;left: 50%;transform: translateX(-50%);border: 1px solid #808080;border-radius: 5px;font-size: 13px;padding: 9px;background: #ffffff;white-space: nowrap;}
-    #cnt4 > div > ul li:hover .tooltip, #cnt4 > div > ul li a:focus .tooltip{display: block;}
-        #cnt4 > div > ul .tooltip:before, #cnt4 > div > ul .tooltip:after{content: '';position: absolute;bottom: -6px;left: 50%;margin-left: -5px;border-top: 6px solid #808080;border-left: 5px solid transparent;border-right: 5px solid transparent;}
-        #cnt4 > div > ul .tooltip:after{border-top-color: #fff;bottom: -5px;}
+.frame .box:before{content: '';position: absolute;top: 0;left: -50%;width: 100%;height: 100%;}
+.frame .box:hover{transform: translate(0, -10px);box-shadow: 0 8px 16px rgba(0, 0, 0, .6);}
 
-/* #cnt5 - 생활 속 휴비스 */
+.frame .box .cont{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+
+.frame .box .cont .top{position: relative;width: 200px;height: 200px;border-radius: 50%;box-shadow: inset 0 0 16px;z-index: 99;margin: 0 auto;background-size: 400px;background-position: center;}
+.frame .box .cont .cir1{background-image: url(../img/trashes/paper2.jpg);}
+.frame .box .cont .cir2{background-image: url(../img/trashes/plastic_2.jpg);}
+.frame .box .cont .cir3{background-image: url(../img/trashes/plastic_bag2.jpg);}
+.frame .box .cont .cir4{background-image: url(../img/trashes/bottle3.jpg);}
+
+.frame .box .cont .top .num{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+.frame .box .cont .top .num h2{font-size: 14px;}
+.frame .box .cont .top .num h2 .count{font-size: 18px;}
+.frame .box .cont .bottom .cont_txt{font-size: 20px;margin-top: 20px;text-align: center;}
+
+svg{position: absolute;top: 25px;left: 25px;width: 190px;height: 190px;z-index: 99;}
+svg circle{width: 100%;height: 100%;fill: none;stroke: rgba(255, 255, 255, 0.507);stroke-width: 10;transform: translate(5px, 5px);}
+svg circle:nth-child(2){
+    stroke-linecap: round; /* stroke 양끝부분의 형태를 선언 : butt, round, project */
+    stroke-dasharray: 440; /* 점선형태로 일부가 보이도록 선언, 다른 부분은 보이지 않도록 선언 */
+    stroke-dashoffset: 440; /* 시작되는 지점으로부터 마지막 지점까지 이격된 거리, 440 : 원의 호길이 = 반지름(r의 속성값) * 2 * PI(3.14) */
+    stroke : #fff;
+    transition : stroke-dashoffset 1s;
+}
+
+
+   
+/* #cnt3 - 생활 속 휴비스 */
 /* maintab */
 /* 1) #mainTab의 크기와 위치 조정 */
-#mainTab{width: 1170px;height: 680px;margin: 50px auto;}
+#mainTab{width: 1170px;height: 680px;}
 /* 2) .tablist의 높이를 지정해서 크기 인식, 하단여백 */
 #mainTab .tablist{height: 50px;margin-bottom: 30px;}
 /* 3) .tablist의 li 한줄에 위치시키기 */
 #mainTab .tablist li{float: left;width: 380px;height: 48px;line-height: 48px;box-sizing: border-box;border: 1px solid #cccccc;background: #f2f2f2;font-size: 18px;color: #000000;text-align: center;cursor: pointer;}
 #mainTab .tablist li + li{margin-left: 15px;}
 /* 4) 탭에 :hover, :focus - script에서 tabindex라는 속성을 0으로 추가해줘서 li에도 focus를 보낼 수 있음, li.active를 가지면 버튼색 활성화 */
-#mainTab .tablist li:hover, #mainTab .tablist li:focus, #mainTab .tablist li.active{color: #ffffff;background: #00326c;border-color: #00326c;}
+#mainTab .tablist li:hover, #mainTab .tablist li:focus, #mainTab .tablist li.active{color: #ffffff;background: #458d51;border-color: #458d51;}
 /* 5) .tabpanel : 자세히보기 버튼 absolute처리 위해 기준점 변경, 모두 숨김 */
 #mainTab .tabpanel{position: relative;height: 600px;display: none;color: #ffffff;}
 /* 6) .active일 경우만 탭패널 보여짐 */
 #mainTab .tabpanel.active{display: block;}
 /* 7) .bg 배경 */
-#mainTab .tabpanel .bg{position: relative;height: 530px;text-align: center;}
-#mainTab #tabpanel1 .bg{background: url(../images/main/img_life1.jpg);}
-#mainTab #tabpanel2 .bg{background: url(../images/main/img_life2.jpg);}
-#mainTab #tabpanel3 .bg{background: url(../images/main/img_life3.jpg);}
+#mainTab .tabpanel .bg{height: 530px;text-align: center;background-size: cover;background-repeat: no-repeat;background-position: center;}
+#mainTab #tabpanel1 .bg{background-image: url(../img/trashes/paper4.jpeg);}
+#mainTab #tabpanel2 .bg{background-image: url(../img/trashes/plastic_4.jpg);}
+#mainTab #tabpanel3 .bg{background-image: url(../img/trashes/plastic_bag3.jpg);}
 /* 8) .bg내부의 텍스트, img, button */
 #mainTab .tabpanel .bg h4{padding-top: 163px;font-size: 74px;font-weight: 700;line-height: 111px;}
 #mainTab .tabpanel .bg p{position: relative;padding-top: 30px;line-height: 22px;}
@@ -208,30 +166,3 @@ break-all (모든 낱개의 글자를 자른다) */
 #mainTab .tabpanel .bg button:focus:after{content: "";position: absolute;top: 1px;left: 1px;width: calc(100% - 2px);height: calc(100% - 2px);outline: 2px dashed #ffff00;}
 /* 9) 자세히 보기 버튼 - 각각의 상세페이지 경로명이 다르므로 총 3개의 자세히 보기를 넣어줘야 함 */
 .tabpanel a{position: absolute;bottom: 0;right: 0;width: 135px;height: 38px;line-height: 38px;font-size: 14px;background: #999999 url(../images/main/arr_more.png) no-repeat 119px 50%;border: 1px solid #666;padding-left: 43px;}/* box-sizing: border-box;를 주면 width: 180px; 안주면 width: 135px; */
-
-
-/* footer */
-#footer{height: 100px;background: #252525;font-size: 14px;color: #989898;line-height: 100px;}
-#footer .max_area > p{float: left;font-size: 12px;padding-left: 30px;}
-#footer .max_area .foot_r{float: right;}
-.foot_r > ul, .family, .foot_r > ul > li{float: left;}
-    #footer .quick{position: relative;color: #ffffff;}
-    #footer .quick:before{content: '';position: absolute;right: 0;top: 50%;margin-top: -7px;width: 1px;height: 14px;background: #989898;}
-    #footer .quick li{margin-right: 13px;}
-    #footer .quick li a{display: block;background: no-repeat left center;}
-    #footer .quick li:nth-child(1) a{background-image: url(../images/common/icon_footer_buy_off.png);padding-left: 31px;}
-        #footer .quick li:nth-child(1) a:hover, #footer .quick li:nth-child(1) a:focus{background-image: url(../images/common/icon_footer_buy_on.png);color: #01b4e5;}
-    #footer .quick li:nth-child(2) a{background-image: url(../images/common/icon_footer_intra_off.png);padding-left: 25px;}
-        #footer .quick li:nth-child(2) a:hover, #footer .quick li:nth-child(2) a:focus{background-image: url(../images/common/icon_footer_intra_on.png);color: #01b4e5;}
-
-    .foot_link li{margin-left: 12px;}
-
-    .family{margin: 33px 30px 0 27px;line-height: 33px;color: #252525}
-    .family > *{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
-    .family ul{display: none;position: absolute;bottom: 34px;/* 100% X =33px인데 bz해서 35px이므로 */left: 0;background: #ffffff;border: 1px solid #989898;border-bottom: none;}
-    .family > a{float: left;background-color: #ffffff;height: 35px;border: 1px solid #989898;}
-    .family ul, .fsite{width: 130px;padding-left: 20px;}
-    .fsite{margin-right: 5px;background: url(../images/common/arr_family_off.gif) no-repeat 99px center;}
-    .family.on .fsite{background-image: url(../images/common/arr_family_on.gif);}
-
-    .go{text-align: center;width: 50px;}

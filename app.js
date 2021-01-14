@@ -12,7 +12,7 @@ const logger = require('./modules/morgan-conn');
 const homeRouter = require('./routes/home');
 const boardRouter = require('./routes/board');
 const recycleRouter = require('./routes/recycle');
-const galleryRouter = require('./routes/gallery');
+const howtoRouter = require('./routes/howto');
 const userRouter = require('./routes/user');
 
 /** Initialize ********************************/
@@ -38,7 +38,7 @@ app.use('/storage', express.static(path.join(__dirname, './uploads')));
 app.use('/home', homeRouter);
 app.use('/board', boardRouter);
 app.use('/recycle', recycleRouter);
-app.use('/gallery', galleryRouter);
+app.use('/howto', howtoRouter);
 app.use('/user', userRouter);
 
 

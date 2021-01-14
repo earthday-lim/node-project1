@@ -32,4 +32,5 @@ router.get(['/', '/home', '/home/:page'], async (req, res, next) => {
 });
 
 
+
 module.exports = router;

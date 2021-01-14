@@ -1,24 +1,19 @@
 extends ../layout/default.pug
 block content
-	.container
-		.jumbotron
-			h2= title
-			button.btn.btn-primary(onclick="location.href='/';") 로그인
-		div.form-wrap
-			form(method="post" name="boardForm" action=`${list ? '/board/saveUpdate' : '/board/save'}` enctype="multipart/form-data")
-				input(type="hidden" name="id" value=`${list && list.id ? list.id : ''}`)
-				input.form-control(type="text" name="title" placeholder="제목을 입력하세요." value=`${list && list.title ? list.title : ''}`)
-				input.form-control(type="text" name="writer" placeholder="작성자를 입력하세요." value=`${list && list.writer ? list.writer : ''}`)
-				div
-					if list && list.savefile
-						.file-wrap.py-2.mb-2.border-bottom
-							span.font-weight-bold= list.realfile
-							a.fa.fa-times-circle.ml-2(href=`javascript: fileRemove(${list.id})`)
-					input.form-control-file(name="upfile" type="file")
-				textarea.form-control(name="content" placeholder="내용을 입력하세요.")= `${list && list.content ? list.content : ''}`
-				hr
+	div.write
+		form(method="post" name="boardForm" action=`${list ? '/board/saveUpdate' : '/board/save'}` enctype="multipart/form-data")
+			input(type="hidden" name="id" value=`${list && list.id ? list.id : ''}`)
+			input.title(type="text" name="title" placeholder="제목을 입력하세요." value=`${list && list.title ? list.title : ''}`)
+			input(type="text" name="writer" placeholder="작성자를 입력하세요." value=`${list && list.writer ? list.writer : ''}`)
+			textarea.cnt(name="content" placeholder="내용을 입력하세요.")= `${list && list.content ? list.content : ''}`
+			div
+				if list && list.savefile
+						span.font-weight-bold= list.realfile
+						a.fa.fa-times-circle.ml-2(href=`javascript: fileRemove(${list.id})`)
+				input.file(name="upfile" type="file")
+			.button
 				if list
-					button.btn.btn-success 수정
+					button 수정
 				else
-					button.btn.btn-primary 저장
-				button.btn.btn-danger(type="reset") 다시작성
+					button 저장
+				button(type="reset") 다시작성

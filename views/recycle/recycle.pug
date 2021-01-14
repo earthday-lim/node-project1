@@ -6,92 +6,81 @@ block content
         .q_frame
           .q_cont.q_cont01
             .q_question
-              h2 1. &#xD3C9;&#xC18C;&#xC5D0; &#xC131;&#xACA9;&#xC774; &#xC758;&#xC695;&#xC801;&#xC774;&#xACE0; &#xD65C;&#xB3D9;&#xC801;&#xC785;&#xB2C8;&#xAE4C;?
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              h2 1. 물이나 음식물, 기름 등으로 오염되어 있나요?
             .q_answer
-              label(for='active')
-                input#active(type='radio', name='activity', value='activity')
-                | &#xC758;&#xC695;&#xC801;&#xC774;&#xACE0; &#xD65C;&#xB3D9;&#xC801;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              label(for='quiet')
-                input#quiet(type='radio', name='activity', value='quiet')
-                | &#xCC28;&#xBD84;&#xD558;&#xACE0; &#xB0B4;&#xC131;&#xC801;
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              label(for='polluted')
+                input#polluted(type='radio', name='pollution', value='polluted')
+                | 네, 오염되어 있어요.
+              label(for='unpolluted')
+                input#unpolluted(type='radio', name='pollution', value='unpolluted')
+                | 아니요, 오염되지 않았어요.
             .q_button
-              button.prev(type='button') &#xC774;&#xC804;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              button.next(type='button') &#xB2E4;&#xC74C;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.prev(type='button') 이전
+              button.next(type='button') 다음
               .clear
               | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              p.txt_alert.alert_01 &#xC704;&#xC758; &#xD56D;&#xBAA9;(&#xB4E4;)&#xC744; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.
+              p.txt_alert.alert_01 위 항목이 선택되지 않았습니다.
           | &#x9;&#x9;&#x9;&#x9;&#x9;
           .q_cont.q_cont02
             .q_question
-              h2 2. &#xC5B4;&#xB5A0;&#xD55C; &#xC77C;&#xC744; &#xD560; &#xB54C; &#xD63C;&#xC790; &#xC0AC;&#xC0C9; &#xD558;&#xB294; &#xAC83;&#xC744; &#xC120;&#xD638;&#xD569;&#xB2C8;&#xAE4C;?
+              h2 2. 스프링이나 겉비닐, 테이프 등 다른 재질이 혼합되어 있나요?
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
             .q_answer
-              label(for='alone')
-                input#alone(type='radio', name='thinking', value='alone')
-                | &#xC790;&#xC8FC;&#xD558;&#xB294; &#xD3B8;&#xC774;&#xB2E4;.
+              label(for='mixed')
+                input#mixed(type='radio', name='mixing', value='mixed')
+                | 네, 다른 재질과 섞여있어요.
               | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              label(for='together')
-                input#together(type='radio', name='thinking', value='together')
-                | &#xC804;&#xD600; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;.
+              label(for='unmixed')
+                input#unmixed(type='radio', name='mixing', value='unmixed')
+                | 아니요, 종이만으로 돼있어요.
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
             .q_button
-              button.prev(type='button') &#xC774;&#xC804;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              button.next(type='button') &#xB2E4;&#xC74C;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.prev(type='button') 이전
+              button.next(type='button') 다음
               .clear
               | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              p.txt_alert.alert_02 &#xC704;&#xC758; &#xD56D;&#xBAA9;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.
+              p.txt_alert.alert_02 위 항목이 선택되지 않았습니다.
           | &#x9;&#x9;&#x9;&#x9;&#x9;
           .q_cont.q_cont03
             .q_question
-              h2 3. &#xB2F9;&#xC2E0;&#xC740; &#xCC3D;&#xC758;&#xC801;&#xC774;&#xAE30;&#xBCF4;&#xB2E4; &#xD604;&#xC2E4;&#xC801;&#xC774;&#xB77C;&#xACE0; &#xC0DD;&#xAC01;&#xD569;&#xB2C8;&#xAE4C;?
+              h2 3. 영수증, 우유팩, 종이컵, 포장지 등 코팅되어 있는 종이인가요?
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
             .q_answer
-              label(for='creative')
-                input#creative(type='radio', name='character', value='creative')
-                |  &#xCC3D;&#xC758;&#xC801;
+              label(for='coated')
+                input#coated(type='radio', name='coating', value='coated')
+                |  네, 코팅되어 있어요.
               | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              label(for='reality')
-                input#reality(type='radio', name='character', value='reality')
-                |  &#xD604;&#xC2E4;&#xC801;
+              label(for='uncoated')
+                input#uncoated(type='radio', name='coating', value='uncoated')
+                |  아니요, 코팅돼있지 않아요.
             | &#x9;&#x9;&#x9;&#x9;&#x9;
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
             .q_button
-              button.prev(type='button') &#xC774;&#xC804;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              button.next(type='button') &#xB2E4;&#xC74C;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.prev(type='button') 이전
+              button.next(type='button') 다음
               .clear
               | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              p.txt_alert.alert_03 &#xC704;&#xC758; &#xD56D;&#xBAA9;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.
+              p.txt_alert.alert_03 위 항목이 선택되지 않았습니다.
           | &#x9;&#x9;&#x9;&#x9;&#x9;
           .q_cont.q_cont04
             .q_question
-              h2 4. &#xCDE8;&#xBBF8;&#xB97C; &#xC911;&#xC694;&#xD558;&#xAC8C; &#xC0DD;&#xAC01;&#xD569;&#xB2C8;&#xAE4C;?
+              h2 4. 깨끗한 순수 종이로만 되어 있나요?
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
             .q_answer
-              label(for='long')
-                input#long(type='radio', name='money', value='long')
-                | &#xCDE8;&#xBBF8;&#xB294; &#xC0B6;&#xC758; &#xC77C;&#xBD80;&#xC774;&#xB2E4;
+              label(for='paper')
+                input#paper(type='radio', name='paper', value='paper')
+                | 네, 순수한 종이로만 되어 있어요.
               | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              label(for='short')
-                input#short(type='radio', name='money', value='short')
-                | &#xCDE8;&#xBBF8;&#xB294; &#xC2DC;&#xAC04;&#xC744; &#xB54C;&#xC6B0;&#xB294; &#xC218;&#xB2E8;&#xC774;&#xB2E4;
+              label(for='paperNo')
+                input#paperNo(type='radio', name='paper', value='paperNo')
+                | 아니요, 종이로만 되어있지 않아요.
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
             .q_button
-              button.prev(type='button') &#xC774;&#xC804;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              button.next(type='button') &#xB2E4;&#xC74C;
-              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              button.prev(type='button') 이전
+              button.next(type='button') 다음
               .clear
               | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-              p.txt_alert.alert_04 &#xC704;&#xC758; &#xD56D;&#xBAA9;&#xC744; &#xC120;&#xD0DD;&#xD558;&#xC138;&#xC694;.
+              p.txt_alert.alert_04 위 항목이 선택되지 않았습니다.
           | &#x9;&#x9;&#x9;&#x9;&#x9;
           .q_cont.q_result
             h2 MBTI &#xC720;&#xD615;&#xC5D0; &#xB530;&#xB978; &#xCD94;&#xCC9C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC548;&#xB0B4;&#xD569;&#xB2C8;&#xB2E4;.
@@ -106,6 +95,5 @@ block content
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
             .clear.lastclear
             | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-            a.classLink(href='') &#xCD94;&#xCC9C; &#xD074;&#xB798;&#xC2A4; &#xBC14;&#xB85C;&#xAC00;&#xAE30;
         // /.q_frame
       // /.q_total

@@ -1,22 +1,6 @@
 extends ../layout/default.pug
 block content
   head
-    script.
-      $(document).ready(function () {
-      $('#visual').bxSlider({//슬라이더의 해당부분인  #visual 부분을 불러와서 .bxslider를 바꿔주기
-      //필요한 옵션 추가하기
-      mode : 'fade', // 'horizontal'(기본값, 생략가능), 'vertical', 'fade'
-      autoControls : true, // play, stop 버튼 생성, 기본값은 false
-      auto : true, // 자동 실행, 기본값은 false
-      pause : 2000, // 1초 = 1000, 기본값은 4초마다(4000)
-      ariaLive : true, // 접근성 추가 - 새롭게 갱신되는 내용을 알리기(기본값, 생략가능)
-      ariaHidden : true, // 접근성 추가 - 눈에는 보이지만 스크린리더에서는 읽어주지 않기 위해(기본값, 생략가능)
-      prevText : '이전 슬라이더 보기', // preview, next 버튼의 이름을 한국어로 바꾸기
-      nextText : '다음 슬라이더 보기',
-      startText : '애니메이션 시작', // start, stop 버튼의 이름을 한국어로 바꾸기
-      stopText : '애니메이션 일시정지'
-      });
-      });
   body
     nav#indicator
       ul
@@ -28,126 +12,93 @@ block content
             // a:after 가상요소 배경처리
         li.list2(id='')
           a(href='#cnt2', role='button')
-            span ABOUT US
+            span PRODUCTS
         li.list3(id='')
           a(href='#cnt3', role='button')
-            span PRODUCTS
-        li.list4(id='')
-          a(href='#cnt4', role='button')
-            span PR CENTER
-        li.list5(id='')
-          a(href='#cnt5', role='button')
             span Huvistory
     section#content.max_area
       h2.blind &#xD734;&#xBE44;&#xC2A4; &#xC18C;&#xAC1C;
       article#cnt1
         // .area 가로 1170픽셀, 가운데 위치
         h3.blind MAIN
-        #mainSlider
-          ul#visual
-            li.list1
-              // 이미지를 img아닌 배경이미지로 처리
-              strong 소재의 무한한 가능성
-              p The Infinite potential of Materials
-            li.list2
-              strong 더 나은 세상을 위한 기술
-              p Technology for better life
-            li.list3
-              strong 더 나은 성과를 위한 기술
-              p Technology for better performance
-            li.list4
-              strong 더 나은 안전을 위한 기술
-              p Technology for better safety
-          // control이 자동으로 동적 생성 - 이전, 다음 버튼/ play, stop 버튼, paging indicator
-        ul.info.p_a
-          li
-            a(href='') &#xD68C;&#xC0AC;&#xC18C;&#xAC1C;
-          li
-            a(href='') &#xC81C;&#xD488;&#xC18C;&#xAC1C;
-          li
-            a(href='') &#xCC44;&#xC6A9;&#xACF5;&#xC9C0;
-      #bar1
+        #main_slider
+          .s_title.f_l.p_r
+            .swiper-pagination
+            // 슬라이드 네비게이션
+            h4 슬라이더 제목
+            p 슬라이더 설명
+          div.swiper-container.f_r
+            ul.swiper-wrapper
+              li.swiper-slide.s_01
+                a(href='#')
+                  .img
+                  .txt
+                    h4 dfdfdfdf
+                    p dfdfdfdfdf
+              li.swiper-slide.s_02
+                a(href='#')
+                  .img
+                  .txt
+                    h4 dfdfdfdf
+                    p dfdfdfdfdf
+              li.swiper-slide.s_03
+                a(href='#')
+                  .img
+                  .txt
+                    h4 dfdfdfdf
+                    p dfdfdfdfdf
+              li.swiper-slide.s_04
+                a(href='#')
+                  .img
+                  .txt
+                    h4 dfdfdfdf
+                    p dfdfdfdfdf
+            .swiper-button-prev
+            // 슬라이드 진행방향(이전 버튼)
+            .swiper-button-next
+            // 슬라이드 진행방향(다음 버튼)
+            .swiper-scrollbar
+      article#bar1.py-4
         .txt
-            h3  marvel key ment
-            p i am iron man.
+            h3  어떤 쓰레기인가요?
+            p 어떤 쓰레기로 분리배출해야할 지 애매하다면 아래 버튼을 눌러보세요.
+        ul.area.trash.row.pt-3
+          li.paper.col.mx-2
+            a(href='../howto/#bar1')
+              div
+                h4 종이
+                p PAPER
+          li.plastic.col.mx-2
+            a(href='../howto/#bar2')
+              div
+                h4 플라스틱
+                p PLASTIC
+          li.can.col.mx-2
+            a(href='../howto/#bar3')
+              div
+                h4 캔
+                p CAN
+          li.bottle.col.mx-2
+            a(href='../howto/#bar4')
+              div
+                h4 유리
+                p GLASS
+          li.plastic_bag.col.mx-2
+            a(href='../howto/#bar5')
+              div
+                h4 비닐
+                p VINYL
+          li.stiroform.col.mx-2
+            a(href='../howto/#bar6')
+              div
+                h4 스티로폼
+                p STYROFOAM
       article#cnt2.area
-        h3.tit ABOUT US
-        p 소재의 무한한 가능성! 소재의 발전은 우리의 삶을 보다 풍요롭게 합니다.
-        // ul.about>li>h4+p+a>span.blind2+{자세히보기}
-        ul.about.clearfix
-          li
-            h4 회사개요
-            p 발전된 소재 기술이 인간의 삶을 보다 풍요롭게 한다는 믿음 아래 인간을 향한 소재 기술을 연구합니다.
-            a.bg_arrow(href='')
-              span.blind2 자세히 보기
-          li
-            h4 사업분야
-            p 폴리에스터 섬유부터 슈퍼섬유, 산업자재용 소재 및 수처리 시스템까지 다양한 소재를 개발하고 있습니다.
-            a.bg_arrow(href='')
-              span.blind2 자세히 보기
-          li
-            h4 R&amp;D
-            p
-              |끊임없는 연구개발,
-              br
-              |세계 최고 수준의 R&amp;D 기술력으로 최첨단 소재 개발에 앞장서고 있습니다.
-            a.bg_arrow(href='')
-              span.blind2 R&amp;D 
-              |자세히 보기
-          li
-            h4 사업장소개
-            p
-              |최고 품질의 제품을
-              br
-              |생산하는 혁신과 도전의 현장, 휴비스 사업장을 소개합니다.
-            a.bg_arrow(href='')
-              span.blind2 자세히 보기
-        .clearfix
-          .news.f_l
-            h4
-              a.bg_arrow(href='') 휴비스 뉴스
-            ul
-              li
-                span 휴비스
-                a(href='')
-                  strong 코로나19 극복을 위한 희망 캠페인 릴레이 참여 (휴비스 신유동 사장)
-                  // 가로크기보다 넘쳐나는 텍스트를 스타일에서 말줄임표로 나타내기
-                  p 2020.05.27
-              li
-                span.gray 공통
-                a(href='')
-                  strong 휴비스, 2020 1Q 연결 기준 매출 2,254억원, 영업이익 62억원
-                  p 2020.05.15
-              li
-                span 휴비스
-                a(href='')
-                  strong 휴비스 제20기 정기 주주총회
-                  p 2020.03.16
-          .news.f_r
-            h4
-              a.bg_arrow(href='') 나눔 소식
-            ul
-              li
-                span.gray 전사
-                a(href='')
-                  strong 따뜻한 겨울을 배달하러 갑니다.
-                  p 2019.11.25
-              li
-                span.wblue 전주
-                a(href='')
-                  strong 국가대표 축구선수를 꿈꾸다!
-                  p 2019.06.10
-              li
-                span.wblue 전주
-                a(href='')
-                  strong 함께하는 세상을 그려요~!
-                  p 2019.02.11
-      article#cnt3.area
-        h3.tit PRODUCTS
-        p 차별화된 기술력과 노하우로 삶의 가치를 높이는 고부가가치 소재를 생산하고 있습니다.
+        h3.tit 쓰레기는 지금
+        p 무심코 버린 쓰레기, 어디에 있는가
         ul.products.clearfix
           li.list1
-            h4 단섬유
+            h4 종이
             p 단섬유는 의류용뿐만 아니라 산업용으로 광범위하게 사용됩니다.
             button(type='button')
               span.blind2 &#xB2E8;&#xC12C;&#xC720; &#xC0C1;&#xC138;&#xC124;&#xBA85;
@@ -164,7 +115,7 @@ block content
               li
                 a(href='') 충전용
           li.list2
-            h4 장섬유
+            h4 플라스틱
             p
               |장섬유는 주로 정장,
               br
@@ -183,7 +134,7 @@ block content
               li
                 a(href='') Eco Products
           li.list3
-            h4 PET레진
+            h4 캔
             p
               PET 레진은 섬유용,
               br
@@ -200,7 +151,7 @@ block content
               li
                 a(href='') Specialty
           li.list4
-            h4 슈퍼섬유
+            h4 병
             p 아라미드, PPS 섬유 등 최첨단 슈퍼 섬유 개발에 앞장서고 있습니다.
             button(type='button')
               span.blind2 &#xC288;&#xD37C;&#xC12C;&#xC720; &#xC0C1;&#xC138;&#xC124;&#xBA85;
@@ -212,7 +163,7 @@ block content
               li
                 a(href='') PPS
           li.list5
-            h4 산업자재용 소재
+            h4 비닐
             p
               |농업, 공업, 건축 등
               br
@@ -233,7 +184,7 @@ block content
               li
                 a(href='') 모노필라멘트
           li.list6
-            h4 제품자료실
+            h4 스티로폼
             p
               |휴비스 제품에 대한
               br
@@ -243,40 +194,64 @@ block content
             a(href='')
               span.blind2 &#xC81C;&#xD488;&#xC790;&#xB8CC;&#xC2E4;
             // 클릭 시 링크이동 있음
-      article#cnt4.area
-        h3.tit PR CENTER
-        p 휴비스를 소개하는 영상과 회사소개서를 확인하실 수 있습니다.
-        ul.clearfix
-          li
-            p(aria-hidden='true') 홍보동영상
-            a(href='')
-              img(src='images/main/btn_video_company.png', alt='홍보동영상')
-          li
-            p(aria-hidden='true') CI 스토리
-            a(href='')
-              img(src='images/main/btn_ci_company.png', alt='CI 스토리')
-          li
-            p(aria-hidden='true') 회사소개서
-            a(href='')
-              img(src='images/main/btn_catalog_company.png', alt='회사소개서')
-        .clearfix
-          h4
-            img(src='images/common/icon_snsarea_logo.png', alt='')
-          p 휴비스 공식 SNS, 휴비스의 다양한 이야기를 만나보세요.      
-          ul
-            li
-              a(href='')
-                img(src='images/common/icon_tstory.png', alt='티스토리')
-              .tooltip(aria-hidden='true') &#xD2F0;&#xC2A4;&#xD1A0;&#xB9AC;
-            li
-              a(href='')
-                img(src='images/common/icon_naver.png', alt='네이버 포스트')
-              .tooltip(aria-hidden='true') &#xB124;&#xC774;&#xBC84; &#xD3EC;&#xC2A4;&#xD2B8;
-            li
-              a(href='')
-                img(src='images/common/icon_youtube.png', alt='유튜브')
-              .tooltip(aria-hidden='true') &#xC720;&#xD29C;&#xBE0C;
-      article#cnt5.area
+      article#bar2
+        .txt.f_l
+          h4 재활용 현황
+          p 우리가 버린 쓰레기 중 현재 재활용 된 쓰레기의 비율은?
+        .frame.f_r
+          // 첫번째 서클
+          .box
+            .cont
+              .top.cir1
+                svg
+                  circle(cx='70' cy='70' r='70')
+                  circle(cx='70' cy='70' r='70')
+                .num
+                  h2
+                    span.count 90
+                    span %
+              .bottom
+                h2.cont_txt 종이 쓰레기
+          // 두번째 서클
+          .box
+            .cont
+              .top.cir2
+                svg
+                  circle(cx='70' cy='70' r='70')
+                  circle(cx='70' cy='70' r='70')
+                .num
+                  h2
+                    span.count 85
+                    span %
+              .bottom
+                h2.cont_txt 플라스틱 쓰레기
+          // 세번째 서클
+          .box
+            .cont
+              .top.cir3
+                svg
+                  circle(cx='70' cy='70' r='70')
+                  circle(cx='70' cy='70' r='70')
+                .num
+                  h2
+                    span.count 70
+                    span %
+              .bottom
+                h2.cont_txt 비닐 쓰레기
+          // 네번째 서클
+          .box
+            .cont
+              .top.cir4
+                svg
+                  circle(cx='70' cy='70' r='70')
+                  circle(cx='70' cy='70' r='70')
+                .num
+                  h2
+                    span.count 70
+                    span %
+              .bottom
+                h2.cont_txt 캔/병 쓰레기
+      article#cnt3.area
         h3.tit Huvistory
         p
           |더 좋은 세상을 위한 소재 기술을 만들어 가는 휴비스,
@@ -284,17 +259,13 @@ block content
           |우리 생활 곳곳에서 항상 함께하는 휴비스를 지금 만나보세요.
         #mainTab
           ul.tablist(role='tablist', aria-label='생활 속 휴비스')
-            //
-              <li role="tab" class="tab" aria-controls="tabpanel1" id="tab1"></li>
-              li[role="tab"].tab[aria-controls="tabpanel$"]#tab$*4
-            li#tab1.tab.first(role='tab', aria-controls='tabpanel1') Business
-            li#tab2.tab(role='tab', aria-controls='tabpanel2') Home
-            li#tab3.tab.last(role='tab', aria-controls='tabpanel3') Outdoor
-          // [role="tabpanel"].tabpanel[aria-labelledby="tab$"]#tabpanel$*3>img
+            li#tab1.tab.first(role='tab', aria-controls='tabpanel1') 종이 쓰레기
+            li#tab2.tab(role='tab', aria-controls='tabpanel2') 플라스틱 쓰레기
+            li#tab3.tab.last(role='tab', aria-controls='tabpanel3') 비닐 쓰레기
           #tabpanel1.tabpanel(role='tabpanel', aria-labelledby='tab1')
             .bg
               // 배경이미지 처리
-              h4 Business in Huvis
+              h4 종이 쓰레기
               p
                 |자동차와 사무실, 그리고 즐겨입는 정장까지...
                 br
@@ -302,7 +273,6 @@ block content
                 br
                 br
                 |비즈니스 속 휴비스 이야기, 지금 만나보세요!
-              img(src='images/main/img_play.png', alt='...')
               button(type='button', data-index='0')
                 // .bg와 동일한 크기, absolute로 .bg와 포개지도록
                 span.blind &#xC0C8;&#xCC3D; - &#xB3D9;&#xC601;&#xC0C1;&#xC7AC;&#xC0DD;
@@ -313,7 +283,7 @@ block content
               | &#xC790;&#xC138;&#xD788;&#xBCF4;&#xAE30;
           #tabpanel2.tabpanel(role='tabpanel', aria-labelledby='tab2')
             .bg
-              h4 Home in Huvis
+              h4 플라스틱 쓰레기
               p
                 |침구류와 커튼 소재, 즐겨 입는 운동복과 아기 기저귀까지...
                 br
@@ -321,7 +291,6 @@ block content
                 br
                 br
                 |우리 집 휴비스 이야기, 지금 만나보세요!
-              img(src='images/main/img_play.png', alt='...')
               button(type='button', data-index='1')
                 span.blind &#xC0C8;&#xCC3D; - &#xB3D9;&#xC601;&#xC0C1;&#xC7AC;&#xC0DD;
             a(href='')
@@ -329,7 +298,7 @@ block content
               | &#xC790;&#xC138;&#xD788;&#xBCF4;&#xAE30;
           #tabpanel3.tabpanel(role='tabpanel', aria-labelledby='tab3')
             .bg
-              h4 Outdoor in Huvis
+              h4 비닐 쓰레기
               p
                 |기능성 스포츠 의류, 캐주얼 의류, 신발 그리고 식품용기까지...
                 br
@@ -337,37 +306,8 @@ block content
                 br
                 br
                 |아웃도어 휴비스 이야기, 지금 만나보세요!
-              img(src='images/main/img_play.png', alt='...')
               button(type='button', data-index='2')
                 span.blind &#xC0C8;&#xCC3D; - &#xB3D9;&#xC601;&#xC0C1;&#xC7AC;&#xC0DD;
             a(href='')
               span.blind2 Outdoor
               | &#xC790;&#xC138;&#xD788;&#xBCF4;&#xAE30;
-    footer#footer
-      .max_area.clearfix
-        p Copyright &copy; Huvis All Rights Reserved
-        .foot_r.f_r
-          ul.quick
-            li
-              a(href='') 공개구매
-            li
-              a(href='') 인트라넷
-          ul.foot_link
-            li
-              a(href='') 고객센터
-            li
-              a(href='') 이용약관
-            li
-              a(href='') 이메일무단수집거부
-            li
-              a.bold.font_w(href='') 개인정보취급방침                
-            li
-              a(href='') 사이트맵         
-          .family.p_r
-            a.fsite(href='', role='button') Family Site                
-            ul
-              li
-                a(href='http://www.huviswater.com/kor/', target='_blank', title='새창') 휴비스워터                       
-              li
-                a(href='http://www.huvis.com.cn/chi/', target='_blank', title='새창') 사천휴비스                
-            a.go(href='') &#xC774;&#xB3D9;

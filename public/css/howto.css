@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* #indicator */
+#indicator{position: fixed;top: 50%;right: 73px;margin-top: -74px;width: 138px;z-index: 900;font-size: 12px;}
+#indicator ul li{padding: 8px 0;}
+#indicator ul li a{display: block;height: 24px;line-height: 24px;}
+#indicator ul li a span, #indicator ul li a::after{float: left;height: 24px;}
+#indicator ul li a span{display: block;width: 104px;background: #458d51;-webkit-border-radius: 12px;-moz-border-radius: 12px;border-radius: 12px;text-align: center;color: #ffffff;margin-right: 10px;opacity: 0;}
+#indicator ul li a:hover span, #indicator ul li.on a span{opacity: 1;}
+#indicator ul li a::after{content: '';width: 24px;height: 24px;background-color: #458d51;border-radius: 50%;}/* db필요 없음 float줬기 때문 */
+#indicator ul li a:hover::after, #indicator ul li.on a::after{background-color: #1a4616;}
+
+main{height: 35vh;background: url("../img/trashes/plastic_bag4.jpg") no-repeat 50% 37%;background-size: cover;position: relative;background-attachment: fixed;}
+.dark{width: 100%;height: 100%;background: rgba(0,0,0,.5);}
+main h1{color: #ffffff;font-size: 45px;top: 50%;left: 50%;position: absolute;transform: translate(50%, 50%);}
+section #cnt1{margin: 40px auto;width: 50vw;}
+#cnt1 h1{font-size: 28px;color: #1a4616;font-weight: bold;}
+#cnt1 ul li{height: 160px;}
+#cnt1 ul li .img{float: left;height: 130px;margin: 15px 40px 15px 20px;background-size: 150px 150px; width: 130px;border-radius: 50%;background-position: center;}
+#cnt1 ul li:nth-child(1) .img{background-image: url(../img/trashes/throw.jpeg);}
+#cnt1 ul li:nth-child(2) .img{background-image: url(../img/trashes/wash.jpg);}
+#cnt1 ul li:nth-child(3) .img{background-image: url(../img/trashes/lavel.png);}
+#cnt1 ul li:nth-child(4) .img{background-image: url(../img/trashes/recycle.jpg);}
+#cnt1 ul li .txt{height: 160px;padding: 50px 0;}
+#cnt1 ul li .txt strong{font-size: 26px;color: #458d51;line-height: 30px;}
+#cnt1 ul li .txt p{font-size: 20px;color: #999;line-height: 30px;}
+
+/* bar */
+.bar{background-size: cover;height: 200px;position: relative;background-position: 20% 50%;}
+.bar h1{font-size: 40px;color: #ffffff;position: absolute;top: 12vh;left: 10vw;}
+#bar1{background-image: url(../img/trashes/paper3.jpg);}
+#bar2{background-image: url(../img/trashes/plastic_5.jpg);}
+#bar3{background-image: url(../img/trashes/can3.jpg);background-position: 25% 50%;}
+#bar4{background-image: url(../img/trashes/glass.jpg);}
+#bar5{background-image: url(../img/trashes/plastic_bag5.jpg);}
+#bar6{background-image: url(../img/trashes/styrofoam.jpg);}
+
+/* cnt2 ~ 7 */
+.vision:after{content: '';display: block;clear: both;}
+.vision li{height: 300px;margin-bottom: 30px;}
+.vision .img{float: left;height: 100%;background-size: cover;background-position: center;width: 40%;border-radius: 20px;}
+.vision .txt{float: right;width: 50%;height: 100%;padding-top: 20px;}
+.vision li:nth-child(even) .txt{float: left;text-align: right;}
+.vision li .fade{position: relative;top: 40px;opacity: 0;}
+.vision .txt strong{position: relative;font-size: 26px;line-height: 40px;}
+.vision .txt strong:after{content: "";position: absolute;top: 19px;width: 130px;height: 1px;background: #1a4616;}
+.vision li:nth-child(odd) .txt strong:after{left: -160px;}
+.vision li:nth-child(even) .txt strong:after{right: -160px;}
+.vision .txt strong span{color: #458d51;margin-left: 5px;}
+.vision .txt p{font-size: 17px;line-height: 28px;color: #777777;}
+h2{text-align: center;font-size: 30px;font-weight: bold;color: #777777;margin-top: 40px;}
+.infra_list{height: 280px;width: 100%;text-align: center;}
+.infra_list li{position: relative;float: left;width: calc(20% - 8px);height: 100%;background-size: cover;background-position: center;border-radius: 20px;overflow: hidden;}
+.infra_list li + li{margin-left: 8px;}
+.infra_list li .over{position: absolute;top: 0;left: 0;width: 100%;height: 100%;color: #ffffff;padding-top: 108px;transition: all 0.4s;}
+.infra_list li.on .over{padding-top: 50px;background: rgba(0, 0, 0, .4);}
+.infra_list .over strong{position: relative;display: block;font-size: 24px;text-shadow: 0 0 8px #000;}
+.infra_list .over strong:after{content: '';position: absolute;bottom: -10px;left: 50%;margin-left: -32px;width: 64px;background: #ffffff;height: 2px;}
+.infra_list .over p{padding: 20px 0 32px;line-height: 24px;}
+.infra_list .over strong:after, .infra_list .over p{opacity: 0;transition: all 1s;text-shadow: none;}
+.infra_list li.on .over strong:after, .infra_list li.on .over p{opacity: 1;}
+
+/* #cnt2 - 종이 */
+#cnt2 .vision li:nth-child(1) .img{background-image: url(../img/trashes/news.jpg);}
+#cnt2 .vision li:nth-child(2) .img{background-image: url(../img/trashes/note.jpg);float: right;}
+#cnt2 .vision li:nth-child(3) .img{background-image: url(../img/trashes/cup.jpg);}
+#cnt2 .infra_list li:nth-child(1){background-image: url(../img/trashes/tax.jpeg);}
+#cnt2 .infra_list li:nth-child(2){background-image: url(../img/trashes/wallpaper.jpeg);}
+#cnt2 .infra_list li:nth-child(3){background-image: url(../img/trashes/coatpaper.jpeg);}
+#cnt2 .infra_list li:nth-child(4){background-image: url(../img/trashes/gold.jpg);}
+#cnt2 .infra_list li:nth-child(5){background-image: url(../img/trashes/hamburger.jpg);}
+
+/* #cnt3 - 플라스틱 */
+#cnt3 .vision li:nth-child(1) .img{background-image: url(../img/trashes/delivery.jpg);}
+#cnt3 .vision li:nth-child(2) .img{background-image: url(../img/trashes/lavel2.jpg);float: right;}
+#cnt3 .vision li:nth-child(3) .img{background-image: url(../img/trashes/pump.jpeg);}
+#cnt3 .infra_list li:nth-child(1){background-image: url(../img/trashes/rubber.jpg);}
+#cnt3 .infra_list li:nth-child(2){background-image: url(../img/trashes/strop.jpg);}
+#cnt3 .infra_list li:nth-child(3){background-image: url(../img/trashes/pack.jpg);}
+#cnt3 .infra_list li:nth-child(4){background-image: url(../img/trashes/cd.jpeg);}
+#cnt3 .infra_list li:nth-child(5){background-image: url(../img/trashes/brush.png);}
+
+/* #cnt4 - 캔 */
+#cnt4 .vision li:nth-child(1) .img{background-image: url(../img/trashes/paint.jpg);}
+#cnt4 .vision li:nth-child(2) .img{background-image: url(../img/trashes/mixcan.jpg);float: right;}
+#cnt4 .vision li:nth-child(3) .img{background-image: url(../img/trashes/gas.jpg);}
+
+/* #cnt5 - 병 */
+#cnt5 .vision li:nth-child(1) .img{background-image: url(../img/trashes/wasglass.jpeg);}
+#cnt5 .vision li:nth-child(2) .img{background-image: url(../img/trashes/lavel4.jpg);float: right;}
+#cnt5 .vision li:nth-child(3) .img{background-image: url(../img/trashes/money.png);}
+#cnt5 .vision a{display: block;}
+#cnt5 .infra_list li{width: calc(25% - 8px);}
+#cnt5 .infra_list li:nth-child(1){background-image: url(../img/trashes/color.jpg);}
+#cnt5 .infra_list li:nth-child(2){background-image: url(../img/trashes/broken.jpg);}
+#cnt5 .infra_list li:nth-child(3){background-image: url(../img/trashes/mirror.jpg);}
+#cnt5 .infra_list li:nth-child(4){background-image: url(../img/trashes/light.jpg);}
+
+/* #cnt6 - 비닐 */
+#cnt6 .vision li:nth-child(1) .img{background-image: url(../img/trashes/vinyl-3.jpeg);}
+#cnt6 .vision li:nth-child(2) .img{background-image: url(../img/trashes/tape.jpeg);float: right;}
+#cnt6 .vision li:nth-child(3) .img{background-image: url(../img/trashes/vinyl-4.jpeg);}
+
+/* #cnt7 - 비닐 */
+#cnt7 .vision li:nth-child(1) .img{background-image: url(../img/trashes/styrofoam1.jpg);}
+#cnt7 .vision li:nth-child(2) .img{background-image: url(../img/trashes/styrofoam2.png);float: right;}
+#cnt7 .vision li:nth-child(3) .img{background-image: url(../img/trashes/styrofoam.jpeg);}

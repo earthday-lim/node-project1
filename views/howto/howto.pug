@@ -1,0 +1,309 @@
+extends ../layout/default.pug
+block content
+  body
+    nav#indicator
+      ul
+        li.list1(id='')
+          a(href='#main', role='button')
+            span 4대 원칙
+        li.list1(id='')
+          a(href='#cnt2', role='button')
+            span PAPER
+        li.list2(id='')
+          a(href='#cnt3', role='button')
+            span PLASTIC
+        li.list3(id='')
+          a(href='#cnt4', role='button')
+            span CAN
+        li.list4(id='')
+          a(href='#cnt5', role='button')
+            span GLASS
+        li.list5(id='')
+          a(href='#cnt6', role='button')
+            span VINYL
+        li.list6(id='')
+          a(href='#cnt7', role='button')
+            span STYROFOAM
+    main#main
+      .dark
+        h1 How to recycle?
+    section
+      article#cnt1
+        h1 분리수거 4대원칙
+          ul
+            li
+              .img
+              .txt
+                strong 비운다!
+                p 용기 안에 담겨있는 내용물은 깨끗이 비우고 배출합니다.
+            li
+              .img
+              .txt
+                strong 헹군다!
+                p 재활용품에 묻어있는 이물질, 음식물 등은 닦거나 한 번 헹궈서 배출합니다.
+            li
+              .img
+              .txt
+                strong 분리한다!
+                p 라벨, 상표 등 다른 재질의 부품은 제거하여 배출합니다.
+            li
+              .img
+              .txt
+                strong 섞지 않는다!
+                p 종류별, 재질별로 구분하여 각각의 분리수거함에 따로 배출합니다.
+      div#bar1.bar
+        .dark
+          h1 종이 분리배출법
+      article#cnt2.container
+        div.py-5
+          ul.vision
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 오염되지 않은 깨끗한 종이만
+                  span 종이류에!
+                p
+                  | 음식물이나 세제, 기름 등이 묻어 오염된 종이나
+                  br
+                  | 물이 묻은 종이는 종이로 버릴 수 없어요. 이물질을 제거 후 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 다른 재질은 따로 분리해서 순수한 종이만
+                  span 종이류에!
+                p
+                  | 노트와 같이 스프링, 겉비닐, 플라스틱, 코팅지 등으로으로 제본되어 있거나
+                  br
+                  | 테이프나 택배 송장이 붙어있는 종이상자는 다른 재질을 모두 제거 후 배출해세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 종이팩은 종이팩 전용
+                  span 종이류에!
+                p
+                  | 우유팩이나 종이컵, 컵라면 용기 등은 헹군 후 말리고 펼쳐서 묶음으로 배출해주세요.
+          h2 저희는 종이 쓰레기가 아니에요!
+          ul.infra_list.my-4
+            li
+              .over
+                strong 감열지
+                p 택배송장, 영주승 전산지 등
+            li
+              .over
+                strong 합성수지
+                p 벽지, 부직포 등
+            li
+              .over
+                strong 코팅지
+                p 스티커 코팅, 전단지, 사진 등
+            li
+              .over
+                strong 금은박지
+                p 금박지, 음박지, 알루미늄지 등
+            li
+              .over
+                strong 그 외 젖지 않는 종이
+                p 햄버거 포장지, 기름종이 등
+      div#bar2.bar
+        .dark
+          h1 플라스틱 분리배출법
+      article#cnt3.container
+        div.py-5
+          ul.vision
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 오염되지 않은 깨끗한 플라스틱만
+                  span 플리스틱류에!
+                p
+                  | 음식물이나 기름 등이 묻어 오염된 플라스틱은 재활용을 할 수 없어요. 
+                  br
+                  | 이물질을 제거 후 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 다른 재질은 따로 분리해서 순수한 플라스틱만
+                  span 플리스틱류에!
+                p 테이프나 라벨이 붙어있는 플라스틱이나 고무, 고철, 비닐 등
+                  br
+                  | 다른 재질과 혼합되어 있는 플라스틱은 재활용할 수 없어요. 다른 재질은 제거 후 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong 펌핑식 용기는 펌프를 분리한 후 
+                  span 플라스틱류에!
+                p 샴푸, 린스, 세제, 로션 등의 펌핑식 용기는 펌프는 따로 분리하여 일반쓰레기로 배출해주세요.
+          h2 저희는 플라스틱 쓰레기가 아니에요!
+          ul.infra_list.my-4
+            li
+              .over
+                strong 고무
+                p 고무장갑, 지우개 등
+            li
+              .over
+                strong 가벼운 플라스틱
+                p 빨대, 식기류 등
+                  |너무 가벼운 플라스틱은 분리과정에서 걸리지 않아서 재활용 불가
+                 
+            li
+              .over
+                strong 포장재
+                p 과일 포장재, 포장 완충재 등
+            li
+              .over
+                strong 혼합 플라스틱 
+                p 호스, 화분, 돗자리, CD, DVD 등
+                  | 화학처리로 만들어진 플라스틱이므로 지자체별 재활용여부를 확인해서 배출
+            li
+              .over
+                strong 복합재질
+                p 칫솔, 문구류, 전기코드, 우산, 전기장판, 자전거 등
+                  | 플라스틱, 철사 등이 복합적으로 혼합되어 있는 복합재질
+                  | 너무 큰 쓰레기의 경우 대형폐기물이나 불연성 규격봉투에 따로 담아 배출
+      div#bar3.bar
+        .dark
+          h1 캔 분리배출법
+      article#cnt4.container
+        div.py-5
+          ul.vision
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 오염되지 않은 깨끗한 캔만
+                  span 캔류에!
+                p
+                  | 음식물이나 기름 등이 묻어 오염된 캔은 재활용할 수 없어요.
+                  br
+                  | 페인트, 등유, 휘발유, 경유, 신나 등 유해물질이 묻은 캔은 생활계유해폐기물로 폐기물 업체를 통해 위탁 처리해주세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 다른 재질은 따로 분리해서 순수한 캔만
+                  span 캔류에!
+                p
+                  | 플라스틱과 섞여있는 고철은 다른 재질을 모두 제거 후 배출해주세요.
+                  br
+                  | 못, 나사 같은 고철이나 건전지는 별도의 수거함에 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 부탄가스나 스프레이 용기는 내용물 제거 후
+                  span 캔류에!
+                p
+                  | 폭발 위험이 있으므로 캔에 구멍을 내어 내용물을 완전히 제거 후 배출해주세요.
+      div#bar4.bar
+        .dark
+          h1 유리 분리배출법
+      article#cnt5.container
+        div.py-5
+          ul.vision
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 오염되지 않은 깨끗한 유리만
+                  span 유리류에!
+                p
+                  | 음식물이나 기름 등이 묻어 오염된 유리는 이물질을 제거 후 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 다른 재질은 따로 분리해서 순수한 유리만
+                  span 유리류에!
+                p 테이프나 라벨이 붙어있는 유리는 다른 재질을 모두 제거 후 배출해세요.
+            li
+              a(href="https://m.post.naver.com/viewer/postView.nhn?volumeNo=17333299&memberNo=7441963").img.fade
+              .txt
+                strong
+                  | 빈용기를 소매점에 갖다주면
+                  span 빈용기 보상금을!
+                p 깨끗한 병을 대형마트나 소매정 등에 가져가면 빈용기 보상금을 받을 수 있어요!
+          h2 저희는 유리 쓰레기가 아니에요!
+          ul.infra_list.my-4
+            li
+              .over
+                strong 코팅, 다양한 색상이 들어간 병
+                p 색상이 들어간 병은 따로 수거함에 버리는 게 맞지만 없다면 같이 버림.
+            li
+              .over
+                strong 깨진 유리
+                p 깨진 유리는 유리로 버릴 수 없고, 신문지로 싸서 일반쓰리기에.
+            li
+              .over
+                strong 복합 유리
+                p 거울, 도자기, 사기그릇, 내열강화유리, 유리로 만든 뚜껑, 크리스탈 유리장식, 욕실 타일 등
+            li
+              .over
+                strong 전구, 형광등 전용 수거함
+                p 형광등, 전구(LED 전구 포함) 등
+      div#bar5.bar
+        .dark
+          h1 비닐 분리배출법
+      article#cnt6.container
+        div.py-5
+          ul.vision
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 오염되지 않은 깨끗한 비닐만
+                  span 비닐류에!
+                p
+                  | 과자 봉지, 즉석 식품 봉지 등 음식물이 묻은 비닐은 이물질을 제거 후 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 다른 재질은 따로 분리해서 순수한 비닐만
+                  span 비닐류에!
+                p
+                  | 스티커, 테이프 같은 일반쓰레기에 해당하는 다른 재질과 섞여 있는 비닐은
+                  br
+                  | 다른 재질을 모두 제거 후 투명한 봉지에 모아 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 이름은 비닐랩이지만 비닐이 아닌
+                  span 비닐랩!
+                p
+                  | 비닐랩은 종류에 따라 다르지만 비닐 재질이 아닌 경우가 많아요. 
+                  br
+                  | 비닐랩이나 재활용 마크가 표기되지 않은 비닐 포장재는 일반쓰레기로 배출해주세요.
+      div#bar6.bar
+        .dark
+          h1 스티로폼 분리배출법
+      article#cnt7.container
+        div.py-5
+          ul.vision
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 오염되지 않은 깨끗한 백색의 스티로폼만
+                  span 스티로폼류에!
+                p
+                  | 음식물이나 기름 등이 묻어 오염된 스티로폼은 이물질을 제거 후 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong 다른 재질은 분리해서 순수한 스티로폼만
+                  span 스티로폼류에!
+                p 테이프나 택배 송장, 상표 등이 붙어있는 스티로폼은 다른 재질을 모두 제거 후 배출해주세요.
+            li
+              div.img.fade
+              .txt
+                strong
+                  | 코팅되어 있는 특수한 스티로폼은
+                  span 일반쓰레기에!
+                p
+                  | 다른 재질로 코팅되어 있거나 유색의 스티로폼은 잘게 쪼개서 일반쓰레기에 배출해주세요.

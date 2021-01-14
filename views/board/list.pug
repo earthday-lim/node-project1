@@ -1,28 +1,43 @@
 extends ../layout/default.pug
 block content
 	.container
-		.jumbotron.my-2
+		.top
 			h1= title
-			if user && user.id
-				hr
-				button.btn.btn-primary(onclick="location.href='/board/write';") 글작성
-		table.table.table-bordered.text-center
-			thead.thead-dark
-				tr
-					th 번호
-					th 제목
-					th 작성자
-					th 내용
-					th 작성일
-			tbody
-				each v in lists
-					tr
-						td= v.id
-						td.text-left
-							a(href=`/board/view/${v.id}`)= v.title
-								if v.savefile
-									i.fa.fa-file.ml-2
-						td= v.writer
-						td.text-left= v.content
-						td= v.wdate
-		include ../inc/pager.pug
+			.search
+				.keyword
+					input(type='text' placeholder='검색어를 입력하세요.')
+					button(type='submit') 검색
+			.searched
+				ul
+					each v in lists
+						li
+							a(href="")= v.title
+		section#products
+			.total_pd
+				.sort_button
+					button.date_sort &#xCD5C;&#xC2E0;&#xC21C;
+					button.fav_sort &#xC778;&#xAE30;&#xC21C;
+					select.sort_sel
+						option &#xC120;&#xD0DD;
+						option(value='date') &#xCD5C;&#xC2E0;&#xC21C;
+						option(value='fav') &#xC778;&#xAE30;&#xC21C;
+					if user && user.id
+						button(onclick="location.href='/board/write';") 글작성
+				.pd_frame
+					each v in lists
+						.pd_box
+							a(href=`/board/view/${v.id}`)
+								.pd_photo
+									img(src='../img/img1.jpg' alt='')
+								.pd_info
+									h3.pd_tit
+										a(href=`/board/view/${v.id}`)= v.title
+											if v.savefile
+												i.fa.fa-file.ml-2
+									p.pd_txt= v.content
+									.pd_etc
+										span.pd_writer= v.writer
+										.pd_date= v.wdate
+									p.fav 좋아요
+										span 105
+				ol.pager

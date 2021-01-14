@@ -1,2 +1,13 @@
 script(src="https://code.jquery.com/jquery-3.5.1.min.js")
 script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js")
+script(src="https://unpkg.com/swiper/swiper-bundle.js")
+script.
+    /* menu */
+    $(document).ready(function(){
+        $(".down").hover(function(){
+            $(this).find("ul").stop().slideDown();
+        }, function(){
+            $(this).find("ul").stop().slideUp();
+        });
+    });
+    

@@ -1,16 +1,33 @@
-header.bg-white.text-success.pl-5.pr-5.pt-4.pb-4.shadow-sm
-	.logo 
-		a.navi(href='/home').pt-3.pb-3.px-5.bg-warning LOGO
-	.navi-wrap.m-0-auto
-		a.navi(href='/home').mx-2 HOME
-		a.navi(href='/board').mx-2 COMMUNITY
-		a.navi(href='/recycle').mx-2 RECYCLE
-		a.navi(href='/gallery').mx-2 GALLERY
+header#header.bg-white.pt-3.pb-3.shadow-sm
+	.logo(style="height: 48px;width: 102px;")
+		a.navi(href='/home' style="background: url('../img/logo.png') no-repeat;background-size: cover;display: block;height: 100%;")
+	ul.navi-wrap.m-0-auto
+		li
+			a.navi(href='/home').mx-2 HOME
+		li
+			a.navi(href='/board').mx-2 COMMUNITY
+		li.down
+			a.navi(href='/recycle').mx-2 RECYCLE
+			ul
+				li
+					a(href="") PAPER					
+				li
+					a(href="") PLASTIC					
+				li
+					a(href="") CAN					
+				li
+					a(href="") GLASS				
+				li
+					a(href="") VINYL					
+				li
+					a(href="") STYROFOAM					
+		li
+			a.navi(href='/howto').mx-2 HOW TO
 	.wrap
 		if user && user.userid
 			a.navi(href='/user/logout') LOGOUT
 		else
 			a.navi(href='/user/join') JOIN
 			a.navi(href='/user/login') LOGIN	
-		span.mx-3 |
-		span.ml-2= `${user && user.username ? '['+user.username+']님' : ''}`
+		span.navi |
+		span.navi= `${user && user.username ? '['+user.username+']님' : ''}`
