@@ -24,10 +24,23 @@ router.get(['/', '/list', '/list/:page'], async (req, res, next) => {
 			order: ['id', 'DESC'], 
 			limit: [pagers.startIdx, pagers.listCnt]
 		});
+	
 		pug.lists = rs[0];
-		pug.lists.forEach((v) => {
-			v.wdate = moment(v.wdate).format('YYYY년 MM월 DD일');
+		pug.list = rs[0][0];
+		console.log("여기찍히나")
+		console.log(pug.lists[0].savefile)
+		pug.lists.forEach(list => {
+			console.log(list.savefile);
 		});
+		pug.lists.forEach((v) => {
+			v.wdate = moment(v.wdate).format('YYYY년 MM월 DD일');	
+			if(v.savefile) {
+				if(imgExt.includes(extGen(v.savefile))) {
+					v.imgSrc = imgFolder(v.savefile);
+				}
+			}
+		});
+	
 		res.render('./board/list.pug', pug);
 	}
 	catch(e) {
@@ -51,6 +64,11 @@ router.post('/save', isUser, upload.single('upfile'), async (req, res, next) => 
 				data: req.body,
 				file: req.file
 			});
+			if(pug.list.savefile) {
+			if(imgExt.includes(extGen(pug.list.savefile))) {
+				pug.list.imgSrc = imgFolder(pug.list.savefile);
+			}
+		}
 			res.redirect('/board');
 		}
 	}
@@ -64,7 +82,7 @@ router.get('/view/:id', async (req, res) => {
 	try {
 		pug = {title: '게시글 보기', js: 'board', css: 'board'};
 		rs = await sqlGen('board', 'S', {where: ['id', req.params.id]});
-		pug.list = rs[0][0];
+		pug.list = rs[0][0]; 
 		pug.list.wdate = moment(pug.list.wdate).format('YYYY-MM-DD HH:mm:ss');
 		if(pug.list.savefile) {
 			if(imgExt.includes(extGen(pug.list.savefile))) {
