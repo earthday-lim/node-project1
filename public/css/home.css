@@ -29,10 +29,10 @@ padding: 0 200px;}
 #main_slider .swiper-slide a{display: block;width: 100%;height: 100%;}
 #main_slider .swiper-slide a .img{display: block;width: 70%;height: 100%;background-size: cover;background-position: 50% 50%;float: left;border-radius: 30px;}
 #main_slider .swiper-slide a .txt{width: 30%;height: 50%;float: right;text-align: center;transform: translateY(50%);}
-#main_slider .swiper-slide.s_01 a .img{background-image: url(../img/img-01.jpg);}
-#main_slider .swiper-slide.s_02 a .img{background-image: url(../img/img-02.jpg);}
-#main_slider .swiper-slide.s_03 a .img{background-image: url(../img/img-03.jpg);}
-#main_slider .swiper-slide.s_04 a .img{background-image: url(../img/img-04.jpg);}
+#main_slider .swiper-slide.s_01 a .img{background-image: url(../img/trashes/recycle_4.jpg);}
+#main_slider .swiper-slide.s_02 a .img{background-image: url(../img/trashes/recycle_3.jpg);}
+#main_slider .swiper-slide.s_03 a .img{background-image: url(../img/trashes/recycle_2.jpg);}
+#main_slider .swiper-slide.s_04 a .img{background-image: url(../img/trashes/recycle_1.jpg);}
 #main_slider img{width: 100%;transform: translate(0, -10vw);}
 .swiper-button-prev, .swiper-button-next, .swiper-pagination{--swiper-theme-color: #458d51;}
 

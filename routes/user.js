@@ -85,7 +85,9 @@ router.post('/logon', isGuest, async (req, res, next) => {
 
 router.get('/logout', isUser, (req, res, next) => {
 	if(req.session) {
-		req.session.destroy();
+		req.session.destroy(function(){
+			req.session;
+		});
 		req.app.locals.user = null;
 	}
 	res.redirect('/home');

@@ -28,7 +28,7 @@ block content
 						.pd_box
 							a(href=`/board/view/${v.id}`)
 								.pd_photo
-									img(src='../img/img1.jpg' alt='')
+									img(src=`${list.imgSrc}`)
 								.pd_info
 									h3.pd_tit
 										a(href=`/board/view/${v.id}`)= v.title
@@ -40,4 +40,4 @@ block content
 										.pd_date= v.wdate
 									p.fav 좋아요
 										span 105
-				ol.pager
+		include ../inc/pager.pug

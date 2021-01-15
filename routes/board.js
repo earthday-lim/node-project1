@@ -3,6 +3,7 @@ const moment = require('moment');
 const fs = require('fs-extra');
 const createError = require('http-errors');
 const router = express.Router();
+const app = express();
 const { sqlGen } = require('../modules/mysql-conn');
 const { alert, uploadFolder, imgFolder, extGen } = require('../modules/util');
 const { upload, imgExt } = require('../modules/multer-conn');
@@ -11,14 +12,19 @@ const { isUser, isUserApi } = require('../modules/auth-conn');
 
 router.get(['/', '/list', '/list/:page'], async (req, res, next) => {
 	let page = req.params.page || 1;
-	let connect, rs, pug;
+	let rs, pug;
 	try {
 		rs = await sqlGen('board', 'S', {field: ['count(id)']});
-		let pagers = pager(page, rs[0][0]['count(id)'], {pagerCnt: 3, listCnt: 7});
+		let pagers = pager(page, rs[0][0]['count(id)'], {pagerCnt: 5, listCnt: 12});
 		pug = {
 			title: '게시판 리스트', js: 'board', css: 'board', 
 			...pagers
 		};
+		rs = await sqlGen('board', 'S', {
+			field: ['title', 'writer', 'content', 'uid'], 
+			data: req.body,
+			file: req.file
+		});
 		rs = await sqlGen('board', 'S', { 
 			order: ['id', 'DESC'], 
 			limit: [pagers.startIdx, pagers.listCnt]
@@ -27,6 +33,11 @@ router.get(['/', '/list', '/list/:page'], async (req, res, next) => {
 		pug.lists.forEach((v) => {
 			v.wdate = moment(v.wdate).format('YYYY년 MM월 DD일');
 		});
+		if(pug.list.savefile) {
+			if(imgExt.includes(extGen(pug.list.savefile))) {
+				pug.list.imgSrc = imgFolder(pug.list.savefile);
+			}
+		}
 		res.render('./board/list.pug', pug);
 	}
 	catch(e) {
