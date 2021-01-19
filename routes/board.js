@@ -64,10 +64,6 @@ router.post('/save', isUser, upload.single('upfile'), async (req, res, next) => 
 				data: req.body,
 				file: req.file
 			});
-			if(pug.list.savefile) {
-			if(imgExt.includes(extGen(pug.list.savefile))) {
-				pug.list.imgSrc = imgFolder(pug.list.savefile);
-			}
 		}
 			res.redirect('/board');
 		}
