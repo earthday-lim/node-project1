@@ -64,7 +64,6 @@ router.post('/save', isUser, upload.single('upfile'), async (req, res, next) => 
 				data: req.body,
 				file: req.file
 			});
-		}
 			res.redirect('/board');
 		}
 	}
