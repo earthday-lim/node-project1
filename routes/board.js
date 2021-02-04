@@ -24,11 +24,8 @@ router.get(['/', '/list', '/list/:page'], async (req, res, next) => {
 			order: ['id', 'DESC'], 
 			limit: [pagers.startIdx, pagers.listCnt]
 		});
-	
 		pug.lists = rs[0];
 		pug.list = rs[0][0];
-		console.log("여기찍히나")
-		console.log(pug.lists[0].savefile)
 		pug.lists.forEach(list => {
 			console.log(list.savefile);
 		});
@@ -40,7 +37,6 @@ router.get(['/', '/list', '/list/:page'], async (req, res, next) => {
 				}
 			}
 		});
-	
 		res.render('./board/list.pug', pug);
 	}
 	catch(e) {
@@ -54,7 +50,7 @@ router.get('/write', isUser, (req, res, next) => {
 });
 
 router.post('/save', isUser, upload.single('upfile'), async (req, res, next) => {
-	let connect, rs;
+	let connect, rs, pug;
 	try {
 		if(req.allow === false) res.send(alert(`${req.ext}은(는) 업로드 할 수 없습니다.`, '/board'));
 		else {
